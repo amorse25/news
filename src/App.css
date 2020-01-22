@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Lato:400,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Lato|Six+Caps&display=swap');
 
 :root {
   --mainColor: white;
@@ -7,6 +7,7 @@
   --accentHover: rgb(66, 132, 219);
   --navHover: rgb(108, 109, 109);
   --article: rgb(209, 222, 238);
+  --articleHover: rgb(149, 162, 175);
 }
 
 * {
@@ -37,7 +38,7 @@ a, button, .header-h1 {
 .app-main, .categories-main {
   height: 100%;
   display: grid;
-  grid-template-columns: minmax(120px, 1fr) repeat(4, minmax(50px, 351.25px)) minmax(60px, 1fr);
+  grid-template-columns: minmax(8px, 1fr) repeat(4, minmax(40px, 351.25px)) minmax(8px, 1fr);
 
 }
 
@@ -56,8 +57,9 @@ a, button, .header-h1 {
 .home-link {
   color: var(--mainColor);
   display: inline-flex;
-  font-size: 2.0625rem;
-  font-weight: 700;
+  font-family: "Six Caps";
+  font-size: 3.0625rem;
+  /*font-weight: 700;*/
   transition: var(--transition);
 }
 
@@ -79,10 +81,14 @@ a, button, .header-h1 {
 
 .nav-li {
   display: inline-flex;
-  padding-right: 70px;
+  padding-right: 20px;
   font-size: 1.0625rem;
   font-weight: 400;
   transition: var(--transition);
+}
+
+.nav-li:first-child {
+  padding-left: 20px;
 }
 
 .nav-wrapper {
@@ -97,7 +103,8 @@ a, button, .header-h1 {
   color: var(--navHover);
 }
 
-button {
+/* if button is added back */
+/*button {
   border: none;
   background-color: var(--accent);
   color: var(--mainColor);
@@ -110,9 +117,29 @@ button {
 button:hover {
   background-color: var(--accentHover);
   color: var(--mainColor);
+}*/
+
+.link-container {
+  grid-column: 2 / span 4;
+  background-color: var(--article);
+  padding: 20px 0 0 30px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  border-style: solid;
+  border-radius: 10px;
+  border-width: 3px;
+  border-color: var(--accent);
 }
 
-article {
+.link-container:hover {
+  border-style: solid;
+  border-radius: 20px;
+  background-color: var(--articleHover);
+  border-color: var(--articleHover);
+}
+
+/*article:hover {
   grid-column: 2 / span 4;
   background-color: var(--article);
   padding: 20px 0 0 50px;
@@ -120,14 +147,17 @@ article {
   flex-wrap: wrap;
   align-items: center;
   border-bottom-style: outset;
-}
+}*/
 
-.trending-header {
+.trending-header, .categories-h1 {
+  padding-bottom: 15px;
+  padding-top: 5px;
   grid-column: 2 / span 4;
-  color: var(--accent);
+  color: black;
   font-family: "Lato", sans-serif;
   font-weight: 700;
-  font-size: 4.375rem;
+  font-size: 3.375rem;
+  text-transform: capitalize;
 }
 
 h3 {
@@ -137,19 +167,22 @@ h3 {
 
 .item-title {
   display: flex;
-  margin: 0 0 10px 0;
+  padding-right: 30px;
+  padding-bottom: 10px;
 }
 
 .item-description, .article-description {
-  padding-bottom: 10px;
+  display: flex;
   padding-right: 30px;
+  padding-bottom: 20px;
 }
 
 
 .item-container, .article-container {
   display: inline-block;
   align-items: center;
-  padding-bottom: 10px;
+  padding-bottom: 20px;
+  padding-right: 20px;
 }
 
 img {
@@ -158,12 +191,18 @@ img {
   width: 96%;
 }
 
-.categories-h1 {
-  grid-column: 2 / span 6;
-  color: var(--accent);
-  font-family: "Lato", sans-serif;
-  font-weight: 700;
-  font-size: 4.375rem;
-  text-transform: capitalize;
+.footer {
+  grid-column: 2 / span 4;
+  padding-top: 20px;
   padding-bottom: 20px;
+  background-color: var(--accent);
+  align-items: center;
+}
+
+.footer-main {
+  margin: 0;
+  text-align: center;
+  font-family: "Lato", sans-serif;
+  font-size: 0.7625rem;
+  font-weight: 400;
 }

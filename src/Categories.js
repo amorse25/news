@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Header from './Header';
+import Footer from './Footer';
 import './App.css';
 
 class Categories extends Component {
@@ -53,6 +54,8 @@ class Categories extends Component {
                 <option value='popularity'> Popularity </option>
                 <option value='relevancy'> Relevancy </option>
               </select>*/
+            // button option | <div className='url-link'><a href={article.url} target='_blank' rel='noopener noreferrer'>
+            // | <button> View Story </button></a></div>
 
   render() {
     const { articles, category } = this.state;
@@ -63,17 +66,18 @@ class Categories extends Component {
 
           </h1>
               {articles.map(article => (
-                <article key={article.title} className='top-stories'>
+                <a className='link-container' href={article.url} target='_blank' rel='noopener noreferrer'>
                   <div className='article-container'> 
                     <h3 className='item-title'> {article.title} </h3>  
                     <p className='article-description'>
                       {article.description}
                     </p>
-                      <img alt='Nothing to Show' src={article.urlToImage} width='100%' height='500'/> 
-                      <div className='url-link'><a href={article.url} target='_blank' rel='noopener noreferrer'> <button> View Story </button></a></div>
+                      <img alt='Nothing to Show' src={article.urlToImage} /> 
+                      
                   </div>
-                </article>
+                </a>
             ))}
+            <Footer />
           </div>
       );
   }
