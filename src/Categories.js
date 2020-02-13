@@ -17,11 +17,6 @@ class Categories extends Component {
       this.getArticles();
   }
 
-  /*getFilter = (e) => {
-    const value = e.target.value;
-    this.setState({ filter: value })
-    this.getArticles();
-  }*/
 
   getCategory() {
       let category = this.props.location.pathname;
@@ -29,9 +24,6 @@ class Categories extends Component {
       this.setState({ category: newCategory});
       return newCategory
   }
-//&sortBy=popularity
-//&sortBy=${this.state.filter}&language=en
-//https://newsapi.org/v2/top-headlines?category=business&
 
   async getArticles() {
     const topCategory = this.getCategory();
@@ -48,32 +40,23 @@ class Categories extends Component {
       )
   }
 
-            /*<select id='option-select' onChange={this.getFilter}>
-                <option value='-1'> Sort by </option>
-                <option value='publishedAt'> Date Published (default) </option>
-                <option value='popularity'> Popularity </option>
-                <option value='relevancy'> Relevancy </option>
-              </select>*/
-            // button option | <div className='url-link'><a href={article.url} target='_blank' rel='noopener noreferrer'>
-            // | <button> View Story </button></a></div>
 
   render() {
     const { articles, category } = this.state;
       return (
           <div className='categories-main'> 
-            <Header />
+          <Header />
           <h1 className='categories-h1'> Trending in {category} 
 
           </h1>
               {articles.map(article => (
                 <a className='link-container' href={article.url} target='_blank' rel='noopener noreferrer'>
                   <div className='article-container'> 
+                    <img alt='Nothing to Show' src={article.urlToImage} /> 
                     <h3 className='item-title'> {article.title} </h3>  
-                    <p className='article-description'>
-                      {article.description}
-                    </p>
-                      <img alt='Nothing to Show' src={article.urlToImage} /> 
-                      
+                      <p className='article-description'>
+                        {article.description}
+                      </p>
                   </div>
                 </a>
             ))}

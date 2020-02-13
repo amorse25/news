@@ -27,8 +27,6 @@ class App extends Component {
       )
   }
 
-          // button option | <div className='url-link'><a href={article.url} target='_blank' rel='noopener noreferrer'>
-          // | <button> View Story </button></a></div>
 
   render() {
     const { isLoaded, items } = this.state;
@@ -47,12 +45,11 @@ class App extends Component {
               <a className='link-container' href={item.url} target='_blank' rel='noopener noreferrer'>
                   
                   <div className='item-container'> 
-                    <h3 className='item-title'> {item.title} </h3>  
-                    <p className='item-description'>
-                      {item.description}
-                    </p>
                     <img alt='Nothing to Show' src={item.urlToImage} />
-                    <a href={item.url} target='_blank' rel='noopener noreferrer'> </a> 
+                    <h3 className='item-title'> {item.title} </h3>  
+                      <p className='item-description'>
+                        {item.description}
+                      </p>
                   </div>
               </a>
             ))}
