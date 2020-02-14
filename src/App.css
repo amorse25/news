@@ -128,7 +128,7 @@ a, button, .header-h1 {
 }
 
 .app-main a:nth-child(even) {
-  grid-column: 2 / span 8;
+  grid-column: 2 / span 8; 
 }
 .app-main a:nth-child(odd) {
   grid-column: 10 / span 4;
