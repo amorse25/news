@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { HashRouter, Switch, Route } from "react-router-dom";
 import App from './App';
 import Categories from './Categories';
 import './App.css';
@@ -8,8 +8,7 @@ export default class Home extends React.Component {
   render() {    
     return (
       <div className="App">
-        <BrowserRouter>
-          <div>
+        <HashRouter>
             <Switch>
               <Route path='/' component={App} exact/>
               <Route path='/business' component={Categories} />
@@ -20,8 +19,7 @@ export default class Home extends React.Component {
               <Route path='/sports' component={Categories} />
               <Route path='/technology' component={Categories} />
             </Switch>
-          </div>
-        </BrowserRouter>
+        </HashRouter>
       </div>
     );
   }
